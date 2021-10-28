@@ -3,13 +3,13 @@ import Productframe from './productFrame'
 import './Home.css'
 const Home = () => {
 	const [allProducts, setAllProducts] = useState([])
-	const [product1, setProduct1] = useState(null)
-	useEffect(async () => {
-		const data = await fetch('https://fakestoreapi.com/products/')
-		const jsonData = await data.json()
-
-		setProduct1(jsonData[0])
-		setAllProducts(jsonData)
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await fetch('https://fakestoreapi.com/products/')
+			const jsonData = await data.json()
+			setAllProducts(jsonData)
+		}
+		fetchData()
 	}, [])
 	return (
 		<div className='homeContainer'>
