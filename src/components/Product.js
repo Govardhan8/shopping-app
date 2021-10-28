@@ -6,17 +6,17 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Product = () => {
 	const [product, setProduct] = useState(null)
-	const { id } = useParams()
+	let { id } = useParams()
 	useEffect(() => {
-		const number = id
+		id = id
 		const Fetchdata = async () => {
-			const url = 'https://fakestoreapi.com/products/' + number
+			const url = 'https://fakestoreapi.com/products/' + id
 			const data = await fetch(url)
 			const jsonData = await data.json()
 			setProduct(jsonData)
 		}
 		Fetchdata()
-	}, [])
+	}, [id])
 
 	return (
 		<>
