@@ -8,14 +8,14 @@ const Product = () => {
 	const [product, setProduct] = useState(null)
 
 	useEffect(() => {
-		const fetchData = async () => {
+		const Fetchdata = async () => {
 			const id = useParams()
 			const url = 'https://fakestoreapi.com/products/' + id.id
 			const data = await fetch(url)
 			const jsonData = await data.json()
 			setProduct(jsonData)
 		}
-		fetchData()
+		Fetchdata()
 	}, [])
 
 	return (
