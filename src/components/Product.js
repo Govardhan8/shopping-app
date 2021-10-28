@@ -5,12 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Product = () => {
-	const id = useParams()
-
 	const [product, setProduct] = useState(null)
 
 	useEffect(() => {
 		const fetchData = async () => {
+			const id = useParams()
 			const url = 'https://fakestoreapi.com/products/' + id.id
 			const data = await fetch(url)
 			const jsonData = await data.json()
