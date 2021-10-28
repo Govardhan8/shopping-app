@@ -39,7 +39,11 @@ const Product = () => {
 							<span>
 								<b>Description</b>
 							</span>
-							<p>{product.description}</p>
+							<p>
+								{product.description.length > 150
+									? product.description.substring(0, 150) + '...'
+									: product.description}
+							</p>
 						</p>
 						<button className='add'>ADD TO CART</button>
 					</div>

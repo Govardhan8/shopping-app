@@ -53,7 +53,7 @@
 	font-weight: 900;
 	align-self: center;
 	justify-self: center;
-	margin-left: 1rem;
+	margin-left: 0rem;
 }
 @media (min-width: 376px) {
 	.productContainer img {
@@ -65,6 +65,9 @@
 	.productTitle {
 		padding-left: 1.75rem;
 		max-width: 22rem;
+	}
+	.add {
+		margin-left: 1rem;
 	}
 }
 @media (min-width: 600px) {
@@ -90,11 +93,11 @@
 	.ratings,
 	.desc,
 	.productTitle {
-		max-width: 25rem;
+		max-width: 22rem;
 	}
 	.productDetails {
 		grid-area: 'details';
-		font-size: 1.65rem;
+		font-size: 1.5rem;
 		line-height: 2.25rem;
 	}
 	.desc {
@@ -113,7 +116,7 @@
 	}
 	.add {
 		grid-area: 'add';
-		margin-left: 3rem;
+		margin-left: 1rem;
 	}
 	.productContainer {
 		grid-template-areas:
