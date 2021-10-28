@@ -8,7 +8,6 @@ const Product = () => {
 	const [product, setProduct] = useState(null)
 	let { id } = useParams()
 	useEffect(() => {
-		id = id
 		const Fetchdata = async () => {
 			const url = 'https://fakestoreapi.com/products/' + id
 			const data = await fetch(url)
