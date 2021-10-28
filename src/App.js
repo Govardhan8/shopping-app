@@ -5,13 +5,26 @@ import Home from './components/Home'
 import Profile from './components/Profile'
 import Product from './components/Product'
 import Navbar from './components/Navbar'
+import { useState, useEffect } from 'react'
 
 function App() {
+	const [suggestions, setSuggestions] = useState([])
+	localStorage.setItem('cart', 0)
+	useEffect(() => {
+		const fetchData = async () => {
+			const data = await fetch('https://fakestoreapi.com/products/')
+			const jsonData = await data.json()
+			const list = jsonData.map(({ title }) => title)
+			setSuggestions(list)
+		}
+		fetchData()
+	}, [])
+
 	return (
 		<div className='App'>
 			<Router>
 				<div className='pageContainer'>
-					<Navbar />
+					<Navbar suggestions={suggestions} />
 					<Switch>
 						<Route exact path='/cart'>
 							<Cart />
@@ -19,7 +32,7 @@ function App() {
 						<Route exact path='/profile'>
 							<Profile />
 						</Route>
-						<Route path='/product'>
+						<Route exact path='/product/:id'>
 							<Product />
 						</Route>
 						<Route path='/'>

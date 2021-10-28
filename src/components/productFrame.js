@@ -17,8 +17,7 @@ const Productframe = ({ product }) => {
 			{title}
 			<div className='details'>
 				<p className='rating'>
-					<FontAwesomeIcon icon={faStar} />
-					{product.rating.rate}
+					<FontAwesomeIcon icon={faStar} /> {product.rating.rate}
 				</p>
 				<p className='price'>$ {product.price}</p>
 			</div>

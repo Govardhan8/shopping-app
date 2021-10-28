@@ -5,11 +5,12 @@ nav {
 	background: burlywood;
 	color: white;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 5fr 1fr 1fr;
 	align-items: center;
 	justify-items: center;
 	position: sticky;
 	top: 0;
+	z-index: 100;
 	overflow-x: hidden;
 }
 
@@ -18,11 +19,32 @@ a {
 	color: white;
 	font-size: 1.5rem;
 }
-.leftBlock {
-	width: 50%;
+.inputBox input {
+	width: 12rem;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	border: 1px solid transparent;
 }
-
-.rightBlock {
-	text-align: right;
-	width: 50%;
+.inputBox label {
+	width: 100%;
+}
+@media (min-width: 400px) {
+	.inputBox input {
+		width: 15rem;
+	}
+}
+@media (min-width: 550px) {
+	.inputBox input {
+		width: 20rem;
+	}
+}
+@media (min-width: 700px) {
+	.inputBox input {
+		width: 25rem;
+	}
+}
+@media (min-width: 950px) {
+	.inputBox input {
+		width: 30rem;
+	}
 }

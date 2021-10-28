@@ -6,27 +6,25 @@ import {
 	faHome,
 	faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons'
+import Searchbar from './Searchbar'
 
-const Navbar = () => {
+const Navbar = ({ suggestions }) => {
 	return (
 		<>
 			<nav>
-				<div className='leftBlock'>
-					{' '}
-					<Link to='/'>
-						<FontAwesomeIcon icon={faHome} />
-					</Link>
+				{' '}
+				<Link to='/'>
+					<FontAwesomeIcon icon={faHome} />
+				</Link>
+				<div className='inputBox'>
+					<Searchbar suggestions={suggestions} />
 				</div>
-
-				<div className='rightBlock'>
-					<Link to='/cart' className='cart'>
-						<FontAwesomeIcon icon={faShoppingCart} />
-					</Link>
-
-					<Link to='/profile'>
-						<FontAwesomeIcon icon={faUser} />
-					</Link>
-				</div>
+				<Link to='/cart' className='cart'>
+					<FontAwesomeIcon icon={faShoppingCart} />
+				</Link>
+				<Link to='/profile'>
+					<FontAwesomeIcon icon={faUser} />
+				</Link>
 			</nav>
 		</>
 	)
