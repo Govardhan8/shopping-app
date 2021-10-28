@@ -1,0 +1,15 @@
+.homeContainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	justify-items: center;
+	margin: 2rem 0;
+	column-gap: 0rem;
+	row-gap: 2rem;
+	width: 100vw;
+	max-width: 100vw;
+}
+@media (min-width: 1400px) {
+	.homeContainer {
+		grid-template-columns: repeat(4, minmax(20rem, 1fr));
+	}
+}
